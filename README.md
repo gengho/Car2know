@@ -2,7 +2,7 @@
 Class Project for CSE599
 
 ## License
-We chose the BSD license because we don't care if it's stolen 
+We chose the MIT license because we don't care if it's stolen 
 
 
 ## Group member:
