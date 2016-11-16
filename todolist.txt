@@ -1,0 +1,14 @@
+hi, guys, i broke down the main function to the follow 4 subfuctions:
+1. calc_flux
+calculate the influx/outflux data
+
+2. xy2block
+map the x,y (latitude/longtitude) information to each census block
+
+3. flux_per_block
+group counts of influx/outflux per block
+
+4. paint_block
+visualization. how to color the blocks on googlemap?
+
+
