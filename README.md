@@ -1,7 +1,11 @@
 # Car2know
 Class Project for CSE599
 
-Group member:
+## License
+We chose the BSD license because we don't care if it's stolen 
+
+
+## Group member:
 
 Geng Zeng
 genguni@gmail.com
