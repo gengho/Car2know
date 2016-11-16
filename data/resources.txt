@@ -2,3 +2,6 @@ website for census block data:
 http://www.seattle.gov/dpd/cityplanning/populationdemographics/geographicfilesmaps/2010census/default.htm
 
 ideas for examples:
+Data visualization examples of car2go and pronto
+http://mappable.info/one-week-of-carsharing/
+https://www.prontocycleshare.com/datachallenge
