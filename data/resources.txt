@@ -5,3 +5,7 @@ ideas for examples:
 Data visualization examples of car2go and pronto
 http://mappable.info/one-week-of-carsharing/
 https://www.prontocycleshare.com/datachallenge
+
+other dataset:
+£¨Seattle Police Department,Road Weather Information Stations.....£©
+https://data.seattle.gov/browse
