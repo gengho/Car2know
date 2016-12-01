@@ -7,7 +7,8 @@ import sys
 import os
 
 
-
+# Using request and urlopen to get data from car2go's API
+#   We need the city name and consumer_key
 def querydata():
     request = Request("http://www.car2go.com/api/v2.1/vehicles?loc=Seattle&oauth_consumer_key=Fleet-size&format=json")
 
@@ -22,6 +23,12 @@ def querydata():
         print(exc_type, fname, exc_tb.tb_lineno)
         return ""
 
+# The input is the time interval to query data in seconds
+#   as well as the storage path of the file
+#   At first, automatically generate the date when query data
+#   Then build a txt file with the date as the name
+#   If a new day come, automatically build a new txt file
+#   At last, query data from car2go's api
 def StoreData(interval, path):
     dt = datetime.datetime.now()
     tt = dt.timetuple()
@@ -58,7 +65,7 @@ def StoreData(interval, path):
 #             print hour+" "+minute +" "+ second
             data = querydata()
             f.write(currentTime + ';' + data +'\n')
-
+#   Main function
 if __name__ == '__main__':
     path = 'F:\\car2godata\\Seattle\\'
     StoreData(30, path)
