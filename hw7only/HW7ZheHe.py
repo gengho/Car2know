@@ -55,7 +55,7 @@ try:
     # Set the spatial reference GCS_North_American_1983
     spRef = r"Coordinate Systems\Geographic Coordinate System\North America\Nad 1983"
  
-    # Make the XY event layer...
+    # Make the XY event layer
     arcpy.MakeXYEventLayer_management(in_Table, x_coords, y_coords, out_Layer, spRef, z_coords)
  
     # Print the total rows
