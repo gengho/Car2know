@@ -40,7 +40,7 @@ memoryTable = "in_memory" + "\\" + "memoryTable"
 arcpy.Delete_management(memoryTable)
 arcpy.ExcelToTable_conversion(inputExcel, memoryTable,sheetName)
 # arcpy.MakeXYEventLayer_management("memoryTable", "olon", "olat", "ocar_layer",r"Coordinate Systems\Geographic Coordinate System\North America\Nad 1983","")
-# arcpy.MakeXYEventLayer_management("memoryTable", "dlon", "dlat", "dcar_layer",r"Coordinate Systems\Geographic Coordinate System\North America\Nad 1983","")
+
 
 # Display the x,y coordinates for the origin cars
 try:
@@ -64,22 +64,6 @@ try:
     # Save to a layer file
     arcpy.SaveToLayerFile_management(out_Layer, saved_Layer)
  
-except Exception as err:
-    print(err.args[0])
-
-# Display the x,y coordinates for the destination cars
-try:
-    in_Table = "memoryTable.dbf"
-    x_coords = "dlon"
-    y_coords = "dlat"
-    z_coords = ""
-    out_Layer = "dcar_layer"
-    saved_Layer = r"c:\Users\student\Desktop\O\dcar.lyr"
-
-    spRef = r"Coordinate Systems\Geographic Coordinate System\North America\Nad 1983"
-    arcpy.MakeXYEventLayer_management(in_Table, x_coords, y_coords, out_Layer, spRef, z_coords)
-    print(arcpy.GetCount_management(out_Layer))
-    arcpy.SaveToLayerFile_management(out_Layer, saved_Layer)
 except Exception as err:
     print(err.args[0])
 
@@ -107,13 +91,55 @@ else:
 
 # Join the 2 data sets
 try:
-    inFeatures = ["SelectedOcars"]
+    inFeatures = ["SelectedOcars","SelectedBlocks"]
     intersectOutput = "Oblock"
+    # clusterTolerance = 1.5    
+    arcpy.Intersect_analysis(inFeatures, intersectOutput, "ALL", "", "INPUT")
+
+except Exception as err:
+    print(err.args[0])
+
+
+# arcpy.MakeXYEventLayer_management("memoryTable", "dlon", "dlat", "dcar_layer",r"Coordinate Systems\Geographic Coordinate System\North America\Nad 1983","")
+# Display the x,y coordinates for the destination cars
+try:
+    in_Table = "memoryTable.dbf"
+    x_coords = "dlon"
+    y_coords = "dlat"
+    z_coords = ""
+    out_Layer = "dcar_layer"
+    saved_Layer = r"c:\Users\student\Desktop\O\dcar.lyr"
+    spRef = r"Coordinate Systems\Geographic Coordinate System\North America\Nad 1983"
+    arcpy.MakeXYEventLayer_management(in_Table, x_coords, y_coords, out_Layer, spRef, z_coords)
+    print(arcpy.GetCount_management(out_Layer))
+    arcpy.SaveToLayerFile_management(out_Layer, saved_Layer)
+except Exception as err:
+    print(err.args[0])
+
+arcpy.MakeFeatureLayer_management('block', 'block_lyr') 
+arcpy.SelectLayerByLocation_management('block_lyr', 'intersect', 'dcar_layer')
+matchcount = int(arcpy.GetCount_management('block_lyr')[0]) 
+if matchcount == 0:
+    print('No Car2Go data falls in the census block')
+else:
+    arcpy.CopyFeatures_management('block_lyr', 'SelectedBlocks2')
+    print('{0} blocks have the Car2Go data written to {0}'.format(matchcount, SelectedBlocks))
+
+arcpy.MakeFeatureLayer_management('dcar_layer', 'dcar_lyr') 
+arcpy.SelectLayerByLocation_management('dcar_lyr', 'intersect', 'SelectedBlocks2')
+matchcount = int(arcpy.GetCount_management('block_lyr')[0]) 
+if matchcount == 0:
+    print('No Car2Go data falls in the census block')
+else:
+    arcpy.CopyFeatures_management('dcar_lyr', 'SelectedDcars2')
+    print('{0} blocks have the Car2Go data written to {0}'.format(matchcount, SelectedDcars2))
+
+try:
+    inFeatures = ["SelectedDcars","SelectedBlocks2"]
+    intersectOutput = "dblock"
     # clusterTolerance = 1.5    
     arcpy.Intersect_analysis(inFeatures, intersectOutput, "ALL", "", "INPUT")
 except Exception as err:
     print(err.args[0])
-
-# TO BE CONTINUED
 
 
