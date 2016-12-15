@@ -87,18 +87,20 @@ import pysal from scipy import ndimage
 
 ## How to install
 Here are how to install packages:
+
 1. Download miniconda and install it on your system and use the conda command-line tool to update your package listing and install the IPython notebook
 
-2. Update conda's listing of packages for your system:
+2. Update conda's listing of packages for your system:  
 $ conda update conda
 
-3. Install IPython notebook and all its requirements
+3. Install IPython notebook and all its requirements  
 $ conda install ipython-notebook
 
-4. Install Python's Data Science packages
-$ conda install numpy pandas matplotlib
+4. Install Python's Data Science packages  
+python setup.py install  
+This program can help you install most packages required in this projoct. 
 
-5. Specfic Package
+5. Specfic Package  
 	1. If you are already an Anaconda user, you can simply run the command:```conda install fiona```. This will install the most recent published fiona release from the related repository, along with all dependencies.
 
 	2. Alternatively, it is possible to install from PyPI using pip:```pip install fiona```.
