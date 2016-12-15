@@ -4,12 +4,13 @@ The project has the following structure:
 Car2know/
   |- Car2know/
      |- __init__.py
-     |- core.py
+     |- analysis/
+     	|- ...
      |- tests/
         |- ...
   |- docs/
      |- DataSet.md
-     |- Presentation Ver2.pptx
+     |- Tech Rev.pptx
      |- Presentation Ver3.pptx
   |- data/
      |- ...
@@ -17,6 +18,7 @@ Car2know/
      |- ...
   |- .gitignore
   |- LICENSE
+  |- Project Overview.md
   |- README.md
   |- setup.py
   ```
