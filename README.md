@@ -99,7 +99,7 @@ $ conda install numpy pandas matplotlib
 5. Specfic Package
 	1. If you are already an Anaconda user, you can simply run the command:```conda install fiona```. This will install the most recent published fiona release from the related repository, along with all dependencies.
 
-	2. Alternatively, it is possible to install from PyPI using pip:```pip install bokeh```.
+	2. Alternatively, it is possible to install from PyPI using pip:```pip install fiona```.
 
 ## License
 This project utilizes the MIT license.
