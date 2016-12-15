@@ -21,7 +21,7 @@ setup(
 
     url='https://github.com/gengho/Car2know',
 
-    author='Geng Zeng, Yuxuan Cheng, He Zhe, Xiasen Wang'
+    author='Geng Zeng, Yuxuan Cheng, He Zhe, Xiasen Wang',
 
     author_email='genguni@gmail.com, yxcheng@uw.edu,wxiasen@gmail.com,zhehe@uw.edu',
 
@@ -44,7 +44,7 @@ setup(
 
     packages=find_packages(exclude=['Car2know', 'docs', 'data']),
 
-    install_requires=['shapely','geopandas','pandas','pysal','scipy','numpy ,'urllib2'],
+    install_requires=['shapely','geopandas','pandas','pysal','scipy','numpy','urllib2'],
 
 
 )
