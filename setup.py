@@ -1,9 +1,5 @@
 """A setuptools based setup module.
-See:
-https://packaging.python.org/en/latest/distributing.html
-https://github.com/pypa/sampleproject
 """
-
 
 from setuptools import setup, find_packages
 
@@ -21,9 +17,7 @@ setup(
     version='1.0.0',
 
     description='analyse the influx and outflux of Car2Go in different blocks in Seattle',
-    long_description='Our ultimate goal is to visualize the time, frequency of\
-    the available cars to general public in each block, for the convenience of\
-    the public. And hope it will make some improvements to the Car2Go company.'
+    long_description=long_description,
 
     url='https://github.com/gengho/Car2know',
 
@@ -52,5 +46,10 @@ setup(
 
     install_requires=['shapely','geopandas','pandas','pysal','scipy','numpy ,'urllib2'],
 
-    },
+
 )
+"""
+Ref:
+https://packaging.python.org/en/latest/distributing.html
+https://github.com/pypa/sampleproject
+"""
