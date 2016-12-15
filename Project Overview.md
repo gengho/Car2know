@@ -31,9 +31,10 @@ How can we visualize these data in a user-friendly interface accessible by the p
 
 ## Data
 Car2Go Data (Car2goOD.csv) 
-[another-link]: www.car2go.com/api/v2.1/vehicles?loc=Seattle&oauth_consumer_key=Fleet-size&format=json
+[www.car2go.com/api/v2.1/vehicles?loc=Seattle&oauth_consumer_key=Fleet-size&format=json]
+
 2010 King County Census Blocks Data (ArcGIS files)
-[another-link]: www.seattle.gov/dpd/cityplanning/populationdemographics/geographicfilesmaps/2010census/default.htm
+[www.seattle.gov/dpd/cityplanning/populationdemographics/geographicfilesmaps/2010census/default.htm]
 
 ## Design & Engineering Tasks
 * Inputs Car2Go data, 2010 King County Census Blocks shapefiles.
@@ -47,6 +48,9 @@ Car2Go Data (Car2goOD.csv)
 
 ## Use Cases
 User: Select time and location
+
 System: Provide influx and outflux information
+
 User: order a car
+
 System: change the influx and outflux information
