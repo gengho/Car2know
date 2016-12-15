@@ -1,1 +1,10 @@
-.DS_Store
+*.rst
+
+# Python bytecode
+*.pyc
+
+# notebook temporary files
+.ipynb_checkpoints
+
+#emacs temporary files
+*~
